@@ -13,4 +13,8 @@ class KeyValueStore:
         self.__data[id_of] = properties
 
     def get(self, pattern : str):
-        return self.__data
+        result = []
+        for key, value in self.__data.items():
+            result.append(value)
+
+        return result
