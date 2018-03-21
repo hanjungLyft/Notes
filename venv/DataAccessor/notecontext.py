@@ -1,6 +1,7 @@
 import sys
 from venv.ObjectModel.container import Container
 from venv.Storage.keyvalue_store import KeyValueStore
+from venv.Storage.dynomodb import DynomoDB
 
 
 class NoteContext:
@@ -8,7 +9,7 @@ class NoteContext:
         self.__store = store
 
     def __init__(self):
-        self.__store = KeyValueStore.get_instance()
+        self.__store = DynomoDB.get_instance()
 
     def add_container(self, container: Container):
         try:
